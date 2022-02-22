@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: main
+    restart: always
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    ports:
+      - '5080:5000'
+    volumes:
+      - ./templates:/usr/src/app/templates
+      - ./main.py:/usr/src/app/main.py
+      - ./requirements.txt:/usr/src/app/requirements.txt
